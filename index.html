@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./index.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Pangolin:wght@400&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Overlock SC:wght@400&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@400&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Overpass Mono:wght@400&display=swap"
+    />
+  </head>
+  <body>
+    <div class="rectangle-parent" data-animate-on-scroll>
+      <div class="component-child" id="menudrawer"></div>
+      <button class="buy" id="buy">BUY</button>
+      <button class="sell" id="sell">SELL</button>
+      <button class="rent" id="rent">RENT</button>
+      <button class="bought" id="bought">BOUGHT</button>
+      <button class="sold" id="sold">SOLD</button>
+      <button class="rented" id="rented">RENTED</button>
+      <button class="chat" id="chat">CHAT</button>
+      <button class="cart" id="cart">CART</button>
+      <button class="apoc-ai" id="apoc">APOC-AI</button>
+      <button class="settings" id="settingbtn">SETTINGS</button>
+      <img
+        class="interface-shopping-cart-02"
+        alt=""
+        src="./public/interface--shopping-cart-02.svg"
+      />
+
+      <img class="vector-icon" alt="" src="./public/vector.svg" />
+
+      <img
+        class="interface-credit-card-01"
+        alt=""
+        src="./public/interface--credit-card-01.svg"
+      />
+
+      <img
+        class="interface-shopping-bag-01"
+        alt=""
+        src="./public/interface--shopping-bag-01.svg"
+      />
+
+      <img
+        class="interface-chart-bar-vertical"
+        alt=""
+        src="./public/interface--chart-bar-vertical-01.svg"
+      />
+
+      <img
+        class="interface-credit-card-02"
+        alt=""
+        src="./public/interface--credit-card-02.svg"
+      />
+
+      <img
+        class="communication-chat-circle"
+        alt=""
+        src="./public/communication--chat-circle.svg"
+      />
+
+      <img
+        class="environment-planet"
+        alt=""
+        src="./public/environment--planet.svg"
+      />
+
+      <img
+        class="interface-shopping-cart-01"
+        alt=""
+        src="./public/interface--shopping-cart-01.svg"
+      />
+
+      <img
+        class="interface-settings-future"
+        alt=""
+        src="./public/interface--settings-future.svg"
+      />
+
+      <div class="team-fraudsters">
+        <p class="team">TEAM</p>
+        <p class="team">FRAUDSTERS</p>
+      </div>
+      <img
+        class="fraudsters-logo-1"
+        alt=""
+        src="./public/fraudsters-logo-1@2x.png"
+      />
+    </div>
+
+    <script>
+      var scrollAnimElements = document.querySelectorAll("[data-animate-on-scroll]");
+      var observer = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting || entry.intersectionRatio > 0) {
+              const targetElement = entry.target;
+              targetElement.classList.add("animate");
+              observer.unobserve(targetElement);
+            }
+          }
+        },
+        {
+          threshold: 0.15,
+        }
+      );
+      
+      for (let i = 0; i < scrollAnimElements.length; i++) {
+        observer.observe(scrollAnimElements[i]);
+      }
+      </script>
+  </body>
+</html>
